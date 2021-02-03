@@ -8,10 +8,6 @@ const Random =  () => {
 
     const [quote, setQuote] = useState({by: '', message: ''})
 
-    
-    const getNum = () => {
-        setNum(Math.floor(Math.random()*1000))
-    }
 
     const getQuotes = async () => {
         const res = await fetch("https://type.fit/api/quotes")
@@ -23,15 +19,15 @@ const Random =  () => {
             setQuote({by: '', message: ''})
         }
         }
+    const getNum = () => {
+        setNum(Math.floor(Math.random()*1000))
+        getQuotes()
+    }
 
     useEffect(() => {
         getNum()
     }, [])
-       
-   
-    useEffect(() => {
-        getQuotes()
-    }, [num])
+      
 
     return(
         <div id= 'quote-container' style= {{backgroundColor: `#${num}`, transition: '0.6s'}}>
