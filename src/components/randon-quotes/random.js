@@ -13,10 +13,6 @@ const Random =  () => {
         setNum(Math.floor(Math.random()*1000))
     }
 
-    useEffect(() => {
-        getNum()
-    }, [])
-
     const getQuotes = async () => {
         const res = await fetch("https://type.fit/api/quotes")
         const data = await res.json()
@@ -27,6 +23,10 @@ const Random =  () => {
             setQuote({by: '', message: ''})
         }
         }
+
+    useEffect(() => {
+        getNum()
+    }, [])
        
    
     useEffect(() => {
