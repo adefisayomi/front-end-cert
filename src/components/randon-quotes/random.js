@@ -26,7 +26,7 @@ const Random =  () => {
 
     useEffect(() => {
         getNum()
-    }, [])
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
       
 
     return(
